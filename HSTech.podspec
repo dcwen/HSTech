@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "HSTech"
-  s.version      = "0.0.5"
+  s.version      = "0.0.6"
   s.summary      = "Test for HSTech."
 
   # This description is used to generate tags and improve search results.
@@ -97,6 +97,9 @@ Pod::Spec.new do |s|
   # s.public_header_files = "Classes/**/*.h"
 
   s.vendored_frameworks = 'HSTech/Frameworks/HSTech.framework'
+
+  # .a配置
+  # s.ios.vendored_libraries
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

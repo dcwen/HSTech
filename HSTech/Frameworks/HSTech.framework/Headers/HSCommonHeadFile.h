@@ -62,6 +62,7 @@
 #import "HSWaveProgressView.h"
 #import "HSVideoRecordHeader.h"
 #import "HSCopyLabel.h"
+#import "DeviceUtil.h"
 
 #import "HSView.h"
 #import "HSTableViewCell.h"
