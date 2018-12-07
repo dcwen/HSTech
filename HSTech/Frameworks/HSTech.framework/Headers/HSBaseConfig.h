@@ -76,7 +76,7 @@
 #pragma mark - App 加载图片
 
 // HSBundle 图片名
-#define HSBundleImageName(_name) [NSString stringWithFormat:@"HSTech.bundle/Contents/Resources/%@", (_name)]
+#define HSBundleImageName(_name) [NSString stringWithFormat:@"HSTech.bundle/%@", (_name)]
 
 // 读取本地图片
 #define HSImageLocal(file,ext) [UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:file ofType:ext]]
