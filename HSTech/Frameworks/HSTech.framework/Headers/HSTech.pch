@@ -1,0 +1,15 @@
+//
+//  PrefixHeader.pch
+//  HSTech
+//
+//  Created by CWen、文 on 2016/11/8.
+//  Copyright © 2016年 huashitech. All rights reserved.
+//
+
+#ifndef HSTech_pch
+#define HSTech_pch
+
+
+#import "HSTech.h"
+
+#endif /* HSTech_pch */

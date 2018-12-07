@@ -1,0 +1,6 @@
+framework module HSTech {
+  umbrella header "HSTech.h"
+
+  export *
+  module * { export * }
+}
