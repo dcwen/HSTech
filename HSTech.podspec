@@ -107,8 +107,8 @@ Pod::Spec.new do |s|
   #  non-essential files like tests, examples and documentation.
   #
 
-  s.resource  = "HSTech/Resources/HSTech.bundle"
-  # s.resources = "Resources/*.png"
+  # s.resource  = "HSTech/Resources/HSTech.bundle"
+  s.resources = "HSTech/Resources/HSTech.bundle"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
