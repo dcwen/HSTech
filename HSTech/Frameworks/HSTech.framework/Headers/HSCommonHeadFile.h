@@ -11,6 +11,7 @@
 
 /* 网络请求代理协议 */
 #import "HSNetworkClient.h"
+#import "HSNetworkHandler.h"
 
 /* 基础控制器 */
 #import "HSTabBarController.h"
