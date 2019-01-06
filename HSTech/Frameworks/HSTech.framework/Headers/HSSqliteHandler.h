@@ -229,5 +229,7 @@ singleton_h(SqliteHandler)
  */
 - (NSArray *)getAllProperties:(id)obj;
 
+- (NSArray *)getAllPropertiesWithClass:(Class)cls;
+
 
 @end

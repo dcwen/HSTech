@@ -165,6 +165,7 @@ static const void *BandNameKey = &BandNameKey;
 
 // 是否忽略点击时间间隔设置
 @property (nonatomic, assign) BOOL hs_ignoreEvent;
+
 @end
 
 

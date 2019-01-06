@@ -8,6 +8,9 @@
 
 #import "AFHTTPSessionManager.h"
 
+/**
+ 防止 AFHTTPSessionManager 内存泄漏
+ */
 @interface HSHTTPSessionManager : AFHTTPSessionManager
 
 singleton_h(HTTPSessionManager)

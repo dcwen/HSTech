@@ -9,10 +9,6 @@
 #ifndef HSCommonHeadFile_h
 #define HSCommonHeadFile_h
 
-/* 网络请求代理协议 */
-#import "HSNetworkClient.h"
-#import "HSNetworkHandler.h"
-
 /* 基础控制器 */
 #import "HSTabBarController.h"
 #import "HSNavigationController.h"
@@ -88,8 +84,17 @@
 #import "HSGetImageHandler.h"
 #import "HSDeviceHandler.h"
 #import "HSEncryptHandler.h"
-#import "HSNetworkManager.h"
 #import "HSThreadHandler.h"
+
+
+/* 网络接口相关 */
+#import "HSNetworkManager.h"
+#import "HSNetworkHandler.h"
+#import "HSRequestHandler.h"
+#import "HSUploadHandler.h"
+#import "HSDownloadHandler.h"
+#import "HSRequestDataHandler.h"
+
 /* js交互模型封装 */
 
 #endif

@@ -18,21 +18,21 @@
  *
  *  @return 实例
  */
-+ (UIView *)hs_viewWithFrame:(CGRect)rect backColor:(UIColor *)backColor;
++ (UIView *_Nullable)hs_viewWithFrame:(CGRect)rect backColor:(UIColor *_Nullable)backColor;
 
 /**
  *  将视图转为图片
  *
  *  @return 图片
  */
-- (UIImage *)hs_toImage;
+- (UIImage *_Nullable)hs_toImage;
 
 /**
  *  拨打电话号码，弹出提示框
  *
  *  @param phoneNumber 电话号码
  */
-- (void)telWithPhoneNumber:(NSString *)phoneNumber;
+- (void)telWithPhoneNumber:(NSString *_Nullable)phoneNumber;
 
 /**
  *  重设x起点
@@ -62,14 +62,14 @@
  *
  *  @param radii 圆角大小
  */
-- (void)hs_setUpRadii:(float)radii borderWidth:(float)borderWidth borderColor:(UIColor *)borderColor;
+- (void)hs_setUpRadii:(float)radii borderWidth:(float)borderWidth borderColor:(UIColor *_Nullable)borderColor;
 
 /**
  *  设置底部两个圆角
  *
  *  @param radii 圆角大小
  */
-- (void)hs_setDownRadii:(float)radii borderWidth:(float)borderWidth borderColor:(UIColor *)borderColor;
+- (void)hs_setDownRadii:(float)radii borderWidth:(float)borderWidth borderColor:(UIColor *_Nullable)borderColor;
 
 /**
  *  设置四个圆角大小，边框宽度，边框颜色，-1 和 nil表示不设置
@@ -78,12 +78,12 @@
  *  @param Width 边框宽度
  *  @param BorderColor 边框颜色
  */
-- (void)hs_setCornerRadius:(float)Radius borderWidth:(float)Width borderColor:(UIColor *)BorderColor;
+- (void)hs_setCornerRadius:(float)Radius borderWidth:(float)Width borderColor:(UIColor *_Nullable)BorderColor;
 
 /**
  切割虚线圆角
  */
-- (void)hs_setDashedCornerRadius:(float)Radius borderWidth:(float)Width borderColor:(UIColor *)BorderColor;
+- (void)hs_setDashedCornerRadius:(float)Radius borderWidth:(float)Width borderColor:(UIColor *_Nullable)BorderColor;
 
 @end
 
@@ -137,7 +137,7 @@
  @param fromColor 左边开始颜色
  @param toColor 右边结束颜色
  */
-- (void)hs_setGradualChangingColorFromColor:(UIColor *)fromColor toColor:(UIColor *)toColor;
+- (void)hs_setGradualChangingColorFromColor:(UIColor *_Nullable)fromColor toColor:(UIColor *_Nullable)toColor;
 
 @end
 
@@ -202,7 +202,7 @@
  *
  *  @return 水平中心开始点
  */
-- (CGFloat)hs_centerHorizontalWithSubView:(UIView *)subView;
+- (CGFloat)hs_centerHorizontalWithSubView:(UIView *_Nullable)subView;
 
 /**
  *  根据传入的子视图与当前视图计算出垂直中心开始点
@@ -211,7 +211,7 @@
  *
  *  @return 垂直中心开始点
  */
-- (CGFloat)hs_centerVerticalWithSubView:(UIView *)subView;
+- (CGFloat)hs_centerVerticalWithSubView:(UIView *_Nullable)subView;
 
 /**
  *  根据传入的子视图与当前视图计算出中心点
@@ -220,7 +220,7 @@
  *
  *  @return 中心点
  */
-- (CGPoint)hs_centerWithSubView:(UIView *)subView;
+- (CGPoint)hs_centerWithSubView:(UIView *_Nullable)subView;
 
 
 /**
@@ -228,21 +228,21 @@
  *
  *  @param subView 子视图
  */
-- (void)hs_addSubViewToCenter:(UIView *)subView;
+- (void)hs_addSubViewToCenter:(UIView *_Nullable)subView;
 
 /**
  *  水平居中增加子视图
  *
  *  @param subView 子视图
  */
-- (void)hs_addSubViewToHorizontalCenter:(UIView *)subView;
+- (void)hs_addSubViewToHorizontalCenter:(UIView *_Nullable)subView;
 
 /**
  *  垂直居中增加子视图
  *
  *  @param subView 子视图
  */
-- (void)hs_addSubViewToVerticalCenter:(UIView *)subView;
+- (void)hs_addSubViewToVerticalCenter:(UIView *_Nullable)subView;
 
 @end
 
@@ -298,7 +298,7 @@
  *
  *  @param swapView 交换的视图
  */
-- (void)hs_swapDepthsWithView:(UIView*)swapView;
+- (void)hs_swapDepthsWithView:(UIView*_Nullable)swapView;
 
 /**
  * 移除所有子控件
@@ -308,18 +308,18 @@
 /**
  * Finds the first descendant view (including this view) that is a member of a particular class.
  */
-- (UIView*)hs_descendantOrSelfWithClass:(Class)cls;
+- (UIView*_Nullable)hs_descendantOrSelfWithClass:(Class _Nullable )cls;
 
 /**
  * Finds the first ancestor view (including this view) that is a member of a particular class.
  */
-- (UIView*)hs_ancestorOrSelfWithClass:(Class)cls;
+- (UIView*_Nullable)hs_ancestorOrSelfWithClass:(Class _Nullable )cls;
 
 
 /**
  获取当前控制器
  */
-- (UIViewController *)hs_getCurrentVC;
+- (UIViewController *_Nullable)hs_getCurrentVC;
 
 #pragma mark - 视图响应 －
 
@@ -333,17 +333,17 @@
 /**
  添加单击手势回调
  */
-- (void)hs_setTapActionWithBlock:(void (^)(void))block;
+- (void)hs_setTapActionWithBlock:(void (^_Nullable)(void))block;
 
 /**
  添加长按手势回调
  */
-- (void)hs_setLongPressActionWithBlock:(void (^)(void))block;
+- (void)hs_setLongPressActionWithBlock:(void (^_Nullable)(void))block;
 
 /**
  添加拖拽手势回调
  */
--(void)hs_setSwipeActionWithBlock:(void (^)(void))block;
+-(void)hs_setSwipeActionWithBlock:(void (^_Nullable)(void))block;
 
 @end
 
@@ -354,7 +354,7 @@
  * create From Nib method , You can pass CGRectNull if you do not want to change the size of View in Nib
  *
  */
-+ (id)hs_createByFrame:(CGRect)frame;
++ (id _Nullable )hs_createByFrame:(CGRect)frame;
 
 @end
 
@@ -395,23 +395,23 @@
 
 @interface UIView (LayoutConstraintHelper)
 
-- (NSLayoutConstraint*)widthConstraint;
+- (NSLayoutConstraint*_Nullable)widthConstraint;
 
-- (NSLayoutConstraint*)heightConstraint;
+- (NSLayoutConstraint*_Nullable)heightConstraint;
 
-- (NSLayoutConstraint*)top2SupviewConstraintWithTopLayoutGuideOwner:(UIViewController*)controller;
+- (NSLayoutConstraint*_Nullable)top2SupviewConstraintWithTopLayoutGuideOwner:(UIViewController*_Nullable)controller;
 
-- (NSLayoutConstraint*)bottom2SupviewConstraintWithBottomLayoutGuideOwner:(UIViewController*)controller;
+- (NSLayoutConstraint*_Nullable)bottom2SupviewConstraintWithBottomLayoutGuideOwner:(UIViewController*_Nullable)controller;
 
-- (NSLayoutConstraint*)left2SupviewConstraint;
+- (NSLayoutConstraint*_Nullable)left2SupviewConstraint;
 
-- (NSLayoutConstraint*)right2SupviewConstraint;
+- (NSLayoutConstraint*_Nullable)right2SupviewConstraint;
 
 @end
 
 @interface UIView (SelfManager)
 
-@property (nonatomic, copy) idBlock tapActionHandler;
+@property (nonatomic, copy) idBlock _Nullable tapActionHandler;
 
 @end
 
@@ -419,31 +419,31 @@
 @class HSBlankPageView;
 @interface UIView (blankPage)
 
-@property (nonatomic, strong) HSBlankPageView *blankPageView;
+@property (nonatomic, strong) HSBlankPageView * _Nullable blankPageView;
 
 
-- (void)configBlankPageWithTitle:(NSString *)title
-                           image:(NSString *)image
+- (void)configBlankPageWithTitle:(NSString *_Nullable)title
+                           image:(NSString *_Nullable)image
                          hasData:(BOOL)hasData
-                  reloadBtnTitle:(NSString *)reloadTitle
-                  reloadBtnImage:(NSString *)reloadImage
-                  reloadBtnBlock:(voidBlock)block;
+                  reloadBtnTitle:(NSString *_Nullable)reloadTitle
+                  reloadBtnImage:(NSString *_Nullable)reloadImage
+                  reloadBtnBlock:(voidBlock _Nullable )block;
 
 @end
 
 @interface HSBlankPageView : UIView
 
-@property (strong, nonatomic) UIImageView *monkeyView;
-@property (strong, nonatomic) UILabel *tipLabel;
-@property (strong, nonatomic) UIButton *reloadButton;
-@property (copy, nonatomic) voidBlock reloadButtonBlock;
-@property (copy, nonatomic) void(^loadAndShowStatusBlock)();
+@property (strong, nonatomic) UIImageView * _Nullable monkeyView;
+@property (strong, nonatomic) UILabel * _Nullable tipLabel;
+@property (strong, nonatomic) UIButton * _Nullable reloadButton;
+@property (copy, nonatomic) voidBlock _Nullable reloadButtonBlock;
+@property (copy, nonatomic) void(^ _Nullable loadAndShowStatusBlock)();
 
-- (void)configWithTitle:(NSString *)title
-                  image:(NSString *)image
-         reloadBtnTitle:(NSString *)reloadTitle
-         reloadBtnImage:(NSString *)reloadImage
-         reloadBtnBlock:(void(^)(id sender))block;
+- (void)configWithTitle:(NSString *_Nullable)title
+                  image:(NSString *_Nullable)image
+         reloadBtnTitle:(NSString *_Nullable)reloadTitle
+         reloadBtnImage:(NSString *_Nullable)reloadImage
+         reloadBtnBlock:(void(^_Nullable)(id _Nullable sender))block;
 
 @end
 /*------------------页面没有数据时可以配置提示的分类-------------*/

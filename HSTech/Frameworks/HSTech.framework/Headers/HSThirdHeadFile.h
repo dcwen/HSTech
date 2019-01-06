@@ -12,6 +12,7 @@
 /**
  *  第三方框架.h文件
  */
+#import "MBProgressHUD.h"
 #import "Masonry.h"
 #import "AFNetworking.h"
 #import "MJExtension.h"

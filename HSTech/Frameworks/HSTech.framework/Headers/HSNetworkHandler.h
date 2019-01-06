@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "HSHTTPSessionManager.h"
 
-#define HSNetworking [HSNetworkHandler new]
-
 /**
  *  请求成功block
  */
@@ -21,105 +19,53 @@ typedef void (^APISuccessBlock)(NSDictionary *responseObject);
  */
 typedef void (^APIFailureBlock) (NSError *error);
 
-/**
- *  下载完成block
- */
-typedef void(^APIDowdLoadFinishedBlock)(NSString *filePath, NSError *error);
-
 
 @interface HSNetworkHandler : NSObject
 
 /**
- *  AFHTTPRequestOperationManager对象，负责管理和调度网络请求
+ 日志打印，默认开发环境打印日志，生产环境关闭日志
  */
-@property (nonatomic, strong) HSHTTPSessionManager *manager;
+@property (nonatomic, assign) BOOL logEnable;
 
 /**
- 接口请求超时时间
+ 接口请求超时时间，默认20s，上传默认60秒，下载没有设置超时时间
  */
 @property (nonatomic, assign) NSTimeInterval requestTimeOut;
 
+/**
+ 请求地址
+ */
+@property (nonatomic, copy) NSString *urlString;
 
 /**
- *  AFHTTPRequestOperationManager对象，负责文件上传
+ 请求参数
  */
-@property (nonatomic, strong) HSHTTPSessionManager *uploadManager;
-/**
- 上传请求超时时间
- */
-@property (nonatomic, assign) NSTimeInterval uploadTimeOut;
+@property (nonatomic, strong) NSDictionary *parameters;
 
 /**
- *  NSURLSessionDownloadTask对象，负责管理和调度下载任务
+ 容器，HUD父视图
  */
-@property (nonatomic, strong) NSURLSessionDownloadTask *task;
-
-
-/**
- *  默认为YES,加载等待view居中
- */
-@property (nonatomic, assign) BOOL hudCenter;
+@property (strong, nonatomic) UIView *containerView;
 
 /**
  *  加载中提示框
  */
 @property (nonatomic, strong) MBProgressHUD *HUD;
 
+/**
+ 显示加载框
+
+ @param containerView 添加加载框的view
+ */
+- (void)readyForRequest:(UIView *)containerView;
 
 /**
- *  下载文件操作
+ *  请求完成后打印
  *
+ *  @param response 返回对象
+ *  @param error    错误
  */
-- (void)downLoadFileWithUrl:(NSString *)url
-                   Progress:(void (^)(NSProgress *downloadProgress))downloadProgressBlock
-                destination:(NSURL * (^)(NSURL *targetPath, NSURLResponse *response))destination
-          completionHandler:(void (^)(NSURLResponse *response, NSURL *filePath, NSError *error))completionHandler;
+- (void)logFinished:(NSDictionary *)response error:(NSError *)error;
 
-
-/*----------网络请求类重新整理，不影响之前方法------------------*/
-/**
- *  get操作
- *  @param url  请求地址
- *  @param parameters 参数
- *  @param containerView  网络请求发生的view，hud位于其中心
- *  @param successBlock  返回字典类型
- *  @param failureBlock  返回错误
- */
-- (void)getRequestWithUrl:(NSString *)url
-               parameters:(NSDictionary *)parameters
-                     View:(UIView *)containerView
-             successBlock:(APISuccessBlock)successBlock
-             failureBlock:(APIFailureBlock)failureBlock;
-
-/**
- *  post操作
- *  @param url  请求地址
- *  @param parameters 参数
- *  @param containerView  网络请求发生的view，hud位于其中心
- *  @param successBlock  返回字典类型
- *  @param failureBlock  返回错误
- */
-- (void)postRequestWithUrl:(NSString *)url
-                parameters:(NSDictionary *)parameters
-                      view:(UIView *)containerView
-              successBlock:(APISuccessBlock)successBlock
-              failureBlock:(APIFailureBlock)failureBlock;
-
-
-/**
- 上传文件
-
- @param url           请求地址
- @param parameters    参数
- @param file          文件流数组
- @param containerView 网络请求发生的view，hud位于其中心
- @param successBlock  成功回调
- */
-- (void)uploadFileWithUrl:(NSString *)url
-               parameters:(NSDictionary *)parameters
-                     file:(NSArray<HSNetworkClientFile *> *)file
-                     View:(UIView *)containerView
-             successBlock:(idBlock)successBlock;
-/*----------网络请求类重新整理，不影响之前方法------------------*/
 
 @end

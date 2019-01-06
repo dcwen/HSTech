@@ -156,7 +156,7 @@ typedef void(^arrayWithErrorBlock)(NSArray *results,NSError *error);
 typedef void(^arrayAndDescription)(NSArray *results,NSString *description);
 typedef void(^arrayBlock)(NSArray *results);
 typedef void(^successBlock)(id resultObj);
-typedef void(^requestFishedBlock)(id resultObj, NSError *error);
+typedef void(^requestFishedBlock)(NSInteger code, id resultObj, NSError *error);
 
 //----------------------单例申明和定义宏------------------------
 #pragma mark - App 单例申明和定义宏

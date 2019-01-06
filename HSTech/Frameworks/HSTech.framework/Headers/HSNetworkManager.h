@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+//UIKIT_EXTERN NSNotificationName const HSNetworkStatusChangeNotification;
+
 typedef NS_ENUM(NSInteger, HSNetworkStatus) {
     HSNetworkStatusUnknown          = -1,
     HSNetworkStatusNotReachable     = 0,

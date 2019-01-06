@@ -12,4 +12,7 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 
+// 设置 automaticallyAdjustsScrollViewInsets 功能，模式是YES
+@property (nonatomic, assign) BOOL automaticallyAdjustInsets;
+
 @end
